@@ -1,18 +1,18 @@
 import { configureStore, type ConfigureStoreOptions } from '@reduxjs/toolkit';
-import type { PokemonDetailsRepository } from './pokedex/pokemonDetails/domain/gateways/pokemonDetails.repository';
-import { inMemoryPokemonDetails } from './pokedex/pokemonDetails/adapters/inMemoryPokemonDetails';
+import type { PokemonDetailsRepository } from './pokedex/pokemon/domain/gateways/pokemonDetails.repository';
+import { inMemoryPokemonDetails } from './pokedex/pokemon/adapters/inMemoryPokemonDetails';
 import { rootReducer as reducer } from './reducers';
+import type { PokemonListRepository } from './pokedex/pokemon/domain/gateways/PokemonList.repository';
+import { inMemoryPokemonList } from './pokedex/pokemon/adapters/inMemoryPokemonList';
 
 export type ThunkExtraArgument = {
-	repositories: {
-		pokemonDetailsRepository: PokemonDetailsRepository;
-	};
+	pokemonDetailsRepository: PokemonDetailsRepository;
+	pokemonListRepository: PokemonListRepository;
 };
 
 const thunkExtraArgument: ThunkExtraArgument = {
-	repositories: {
-		pokemonDetailsRepository: new inMemoryPokemonDetails()
-	}
+	pokemonDetailsRepository: new inMemoryPokemonDetails(),
+	pokemonListRepository: new inMemoryPokemonList()
 };
 
 type CreateStoreOptions = {

@@ -1,5 +1,5 @@
 import { createSlice, type Slice } from '@reduxjs/toolkit';
-import type { PokemonDetailsState } from '../models/pokemonDetails.model';
+import type { PokemonDetailsState } from '../models/pokemon.model';
 import { getPokemonDetails } from './getPokemonDetails.useCase';
 
 export const initialState: PokemonDetailsState = {

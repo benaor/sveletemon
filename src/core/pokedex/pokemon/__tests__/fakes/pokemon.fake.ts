@@ -1,6 +1,6 @@
-import type { PokemonDetails } from '../../domain/models/pokemonDetails.model';
+import type { Pokemon } from '../../domain/models/pokemon.model';
 
-export const bulbizarre: PokemonDetails = {
+export const bulbizarre: Pokemon = {
 	pokedexId: 1,
 	generation: 1,
 	name: { fr: 'Bulbizarre', en: 'Bulbasaur' },
@@ -48,14 +48,14 @@ export const bulbizarre: PokemonDetails = {
 	}
 };
 
-export const pikachu: PokemonDetails = {
+export const pikachu: Pokemon = {
 	pokedexId: 25,
 	generation: 1,
 	name: { fr: 'Pikachu', en: 'Pikachu' },
 	sprites: {
 		regular: 'https://raw.githubusercontent.com/Yarkis01/PokeAPI/images/sprites/25/regular.png',
 		shiny: 'https://raw.githubusercontent.com/Yarkis01/PokeAPI/images/sprites/25/shiny.png',
-		gmax: 'https://raw.githubusercontent.com/Yarkis01/PokeAPI/images/sprites/25/gmax-regular.png'
+		gmax: null
 	},
 	types: [
 		{
@@ -87,4 +87,46 @@ export const pikachu: PokemonDetails = {
 		pre: [{ pokedexId: 172, name: 'Pichu' }],
 		next: [{ pokedexId: 26, name: 'Raichu', condition: 'Pierre Foudre' }]
 	}
+};
+
+export const sulfura: Pokemon = {
+	pokedexId: 146,
+	generation: 1,
+	name: { fr: 'Sulfura', en: 'Moltres' },
+	sprites: {
+		regular: 'https://raw.githubusercontent.com/Yarkis01/PokeAPI/images/sprites/146/regular.png',
+		shiny: 'https://raw.githubusercontent.com/Yarkis01/PokeAPI/images/sprites/146/shiny.png',
+		gmax: null
+	},
+	types: [
+		{
+			name: 'Feu',
+			image: 'https://raw.githubusercontent.com/Yarkis01/PokeAPI/images/types/feu.png'
+		},
+		{
+			name: 'Vol',
+			image: 'https://raw.githubusercontent.com/Yarkis01/PokeAPI/images/types/vol.png'
+		}
+	],
+	resistances: [
+		{ name: 'Normal', multiplier: 1 },
+		{ name: 'Plante', multiplier: 0.25 },
+		{ name: 'Feu', multiplier: 0.5 },
+		{ name: 'Eau', multiplier: 2 },
+		{ name: '\u00c9lectrik', multiplier: 2 },
+		{ name: 'Glace', multiplier: 1 },
+		{ name: 'Combat', multiplier: 0.5 },
+		{ name: 'Poison', multiplier: 1 },
+		{ name: 'Sol', multiplier: 0 },
+		{ name: 'Vol', multiplier: 1 },
+		{ name: 'Psy', multiplier: 1 },
+		{ name: 'Insecte', multiplier: 0.25 },
+		{ name: 'Roche', multiplier: 4 },
+		{ name: 'Spectre', multiplier: 1 },
+		{ name: 'Dragon', multiplier: 1 },
+		{ name: 'T\u00e9n\u00e8bres', multiplier: 1 },
+		{ name: 'Acier', multiplier: 0.5 },
+		{ name: 'F\u00e9e', multiplier: 0.5 }
+	],
+	evolution: null
 };

@@ -14,9 +14,7 @@ describe('PokemonDetails UseCase', () => {
 	beforeEach(() => {
 		store = createStore({
 			extraArgs: {
-				repositories: {
-					pokemonDetailsRepository: new inMemoryPokemonDetails()
-				}
+				pokemonDetailsRepository: new inMemoryPokemonDetails()
 			}
 		});
 	});
