@@ -1,13 +1,13 @@
 <script>
 	import { page } from '$app/stores';
-	import logo from '$lib/images/svelte-logo.svg';
+	import logo from '$lib/images/logo-pokeball.png';
 	import github from '$lib/images/github.svg';
 </script>
 
 <header>
 	<div class="corner">
-		<a href="https://kit.svelte.dev">
-			<img src={logo} alt="SvelteKit" />
+		<a href="/">
+			<img src={logo} alt="logo pokeball" />
 		</a>
 	</div>
 
@@ -17,13 +17,16 @@
 		</svg>
 		<ul>
 			<li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
-				<a href="/">Home</a>
+				<a href="/">Accueil</a>
 			</li>
-			<li aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
-				<a href="/about">About</a>
+			<li aria-current={$page.url.pathname.startsWith('/pokemon') ? 'page' : undefined}>
+				<a href="/pokemon">Pokemon</a>
 			</li>
-			<li aria-current={$page.url.pathname.startsWith('/sverdle') ? 'page' : undefined}>
-				<a href="/sverdle">Sverdle</a>
+			<li aria-current={$page.url.pathname.startsWith('/equipe') ? 'page' : undefined}>
+				<a href="/equipe">Equipe</a>
+			</li>
+			<li aria-current={$page.url.pathname === '/stack' ? 'page' : undefined}>
+				<a href="/stack">La stack</a>
 			</li>
 		</ul>
 		<svg viewBox="0 0 2 3" aria-hidden="true">
@@ -32,8 +35,8 @@
 	</nav>
 
 	<div class="corner">
-		<a href="https://github.com/sveltejs/kit">
-			<img src={github} alt="GitHub" />
+		<a href="https://github.com/benaor">
+			<img src={github} alt="GitHub Owner" />
 		</a>
 	</div>
 </header>
@@ -42,6 +45,8 @@
 	header {
 		display: flex;
 		justify-content: space-between;
+		background-color: var(--color-theme-1);
+		box-shadow: 0 10px 30px var(--color-black-25);
 	}
 
 	.corner {
@@ -58,8 +63,8 @@
 	}
 
 	.corner img {
-		width: 2em;
-		height: 2em;
+		width: 2.5em;
+		height: 2.5em;
 		object-fit: contain;
 	}
 

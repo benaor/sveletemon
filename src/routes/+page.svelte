@@ -1,12 +1,12 @@
 <script>
-	import Counter from './Counter.svelte';
+	import Counter from '../components/molecules/Counter.svelte';
 	import welcome from '$lib/images/svelte-welcome.webp';
 	import welcome_fallback from '$lib/images/svelte-welcome.png';
 </script>
 
 <svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
+	<title />
+	<meta name="description" content="Pokedex clean archi app" />
 </svelte:head>
 
 <section>
@@ -18,14 +18,17 @@
 			</picture>
 		</span>
 
-		to your new<br />SvelteKit app
+		Cette application est une introduction aux concepts de la clean architecture avec Svelte et
+		Redux.
 	</h1>
 
 	<h2>
-		try editing <strong>src/routes/+page.svelte</strong>
+		Vous trouverez des cas d'utilisation inspiré du Pokedex :
+		<ul>
+			<li>La liste des pokémons de toutes les générations</li>
+			<li>Une page détaillé pour chaque pokemon</li>
+		</ul>
 	</h2>
-
-	<Counter />
 </section>
 
 <style>
