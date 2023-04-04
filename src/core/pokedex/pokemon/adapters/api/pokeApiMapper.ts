@@ -1,10 +1,12 @@
+import type { Pokemon } from '../../domain/models/pokemon.model';
 import type { PokemonList } from '../../domain/models/pokemonList.model';
-import type { PokemonListFromPokeApi } from './pokeApi.model';
+import type { PokemonFromPokeApi, PokemonListFromPokeApi } from './pokeApi.model';
 
-export const pokeApiMapper = (pokemonListFromPokeApi: PokemonListFromPokeApi): PokemonList => {
-	const pokemonList: PokemonList = pokemonListFromPokeApi.map((pokemon) => ({
+export const pokeApiListMapper = (pokemonListFromPokeApi: PokemonListFromPokeApi): PokemonList =>
+	pokemonListFromPokeApi.map((pokemon) => ({
 		...pokemon
 	}));
 
-	return pokemonList;
-};
+export const pokeApiDetailsMapper = (pokemonDetailsFromPokeApi: PokemonFromPokeApi): Pokemon => ({
+	...pokemonDetailsFromPokeApi
+});

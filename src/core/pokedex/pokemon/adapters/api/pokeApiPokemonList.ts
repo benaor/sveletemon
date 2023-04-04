@@ -1,6 +1,6 @@
 import type { PokemonListRepository } from '../../domain/gateways/PokemonList.repository';
 import type { PokemonList } from '../../domain/models/pokemonList.model';
-import { pokeApiMapper } from './pokeApiMapper';
+import { pokeApiListMapper } from './pokeApiMapper';
 
 export class pokeApiPokemonList implements PokemonListRepository {
 	getPokemonList = (): Promise<PokemonList> =>
@@ -8,5 +8,5 @@ export class pokeApiPokemonList implements PokemonListRepository {
 			method: 'GET'
 		})
 			.then((res) => res.json())
-			.then(pokeApiMapper);
+			.then(pokeApiListMapper);
 }

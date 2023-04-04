@@ -1,5 +1,5 @@
 import type { Pokemon } from '../models/pokemon.model';
 
 export interface PokemonDetailsRepository {
-	getPokemonDetails(idPokedex: number): Promise<PokemonDetails>;
+	getPokemonDetails(idPokedex: number): Promise<Pokemon>;
 }
