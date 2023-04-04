@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import InsightPokemon from '../../molecules/InsightPokemon.svelte';
 	import type {
 		PokemonListMapDispatchToProps,
 		PokemonListMapStateToProps
@@ -22,12 +23,19 @@
 	{:else if status === 'failed'}
 		<p>Une erreur est survenue</p>
 	{:else if status === 'succeeded' && pokemons}
-		{#each pokemons as pokemon (pokemon.pokedexId)}
-			<li>
-				<a href={'/pokemon/' + pokemon.pokedexId}>
-					{pokemon.name.fr}
-				</a>
-			</li>
-		{/each}
+		<div class="pokemon-insight-list">
+			{#each pokemons as pokemon (pokemon.pokedexId)}
+				<InsightPokemon {pokemon} />
+			{/each}
+		</div>
 	{/if}
 </div>
+
+<style>
+	.pokemon-insight-list {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+		grid-template-rows: auto;
+		grid-gap: 30px;
+	}
+</style>

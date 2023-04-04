@@ -10,6 +10,7 @@
 	--color-theme-1: #d63a06d7;
 	--color-theme-2: #4075a6;
 	--color-text: rgba(0, 0, 0, 0.7);
+	--color-black-10: rgba(0, 0, 0, 0.1);
 	--color-black-25: rgba(0, 0, 0, 0.25);
 	--color-black-50: rgba(0, 0, 0, 0.5);
 	--column-width: 42rem;
@@ -32,8 +33,11 @@ body {
 		linear-gradient(180deg, var(--color-bg-0) 0%, var(--color-bg-1) 15%, var(--color-bg-2) 50%);
 }
 
+h2 {
+	font-weight: 600;
+}
+
 h1,
-h2,
 p {
 	font-weight: 400;
 }
@@ -45,6 +49,7 @@ p {
 a {
 	color: var(--color-theme-1);
 	text-decoration: none;
+	font-weight: 500;
 }
 
 a:hover {

@@ -17,7 +17,7 @@ type Sprites = {
 	gmax?: Omit<Sprites, 'gmax'> | null;
 };
 
-type Types = {
+export type PokemonType = {
 	name: string;
 	image: string;
 };
@@ -27,7 +27,7 @@ export type Pokemon = {
 	generation: number;
 	name: { fr: string; en: string };
 	sprites: Sprites;
-	types: Types[] | null;
+	types: PokemonType[] | null;
 	resistances: Resistance[] | null;
 	evolution: Evolution | null;
 };

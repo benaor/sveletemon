@@ -36,7 +36,7 @@
 
 	<div class="corner">
 		<a href="https://github.com/benaor">
-			<img src={github} alt="GitHub Owner" />
+			<img src={github} alt="GitHub Owner" class="github-logo" />
 		</a>
 	</div>
 </header>
