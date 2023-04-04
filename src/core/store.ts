@@ -1,9 +1,9 @@
 import { configureStore, type ConfigureStoreOptions } from '@reduxjs/toolkit';
 import type { PokemonDetailsRepository } from './pokedex/pokemon/domain/gateways/pokemonDetails.repository';
-import { inMemoryPokemonDetails } from './pokedex/pokemon/adapters/inMemoryPokemonDetails';
+import { inMemoryPokemonDetails } from './pokedex/pokemon/adapters/inMemory/inMemoryPokemonDetails';
 import { rootReducer as reducer } from './reducers';
 import type { PokemonListRepository } from './pokedex/pokemon/domain/gateways/PokemonList.repository';
-import { inMemoryPokemonList } from './pokedex/pokemon/adapters/inMemoryPokemonList';
+import { pokeApiPokemonList } from './pokedex/pokemon/adapters/api/pokeApiPokemonList';
 
 export type ThunkExtraArgument = {
 	pokemonDetailsRepository: PokemonDetailsRepository;
@@ -12,7 +12,7 @@ export type ThunkExtraArgument = {
 
 const thunkExtraArgument: ThunkExtraArgument = {
 	pokemonDetailsRepository: new inMemoryPokemonDetails(),
-	pokemonListRepository: new inMemoryPokemonList()
+	pokemonListRepository: new pokeApiPokemonList()
 };
 
 type CreateStoreOptions = {

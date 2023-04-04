@@ -5,7 +5,7 @@ import {
 } from '../application/pokemonDetails.selector';
 import { getPokemonDetails } from '../domain/useCases/getPokemonDetails.useCase';
 import { createStore, type AppStore } from '../../../store';
-import { inMemoryPokemonDetails } from '../adapters/inMemoryPokemonDetails';
+import { inMemoryPokemonDetails } from '../adapters/inMemory/inMemoryPokemonDetails';
 import { bulbizarre, pikachu } from './fakes/pokemon.fake';
 
 describe('PokemonDetails UseCase', () => {

@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, test, vitest } from 'vitest';
 import { createStore, type AppStore } from '../../../store';
-import { inMemoryPokemonList } from '../adapters/inMemoryPokemonList';
+import { inMemoryPokemonList } from '../adapters/inMemory/inMemoryPokemonList';
 import {
 	pokemonListSelector,
 	pokemonListStatusSelector
