@@ -17,6 +17,6 @@ export const load = (async ({ params }) => {
 	const { id } = params;
 
 	return {
-		id
+		id: +id
 	};
 }) satisfies PageLoad;

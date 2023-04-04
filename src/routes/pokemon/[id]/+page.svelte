@@ -7,5 +7,12 @@
 	const { id } = data;
 </script>
 
-<h1>Pokemon numéro {id} !</h1>
-<PokemonDetails id={+id} />
+<div class="page-container">
+	<PokemonDetails {id} />
+</div>
+
+<style>
+	.page-container {
+		padding: 10em 0;
+	}
+</style>

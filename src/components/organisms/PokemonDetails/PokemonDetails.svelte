@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import PokemonCard from '../PokemonCard.svelte';
 	import type {
 		PokemonDetailsMapDispatchToProps,
 		PokemonDetailsMapStateToProps,
@@ -21,10 +22,7 @@
 {:else if status === 'failed'}
 	<div>Erreur</div>
 {:else if status === 'succeeded'}
-	<div>
-		<h1>{pokemon.name.fr}</h1>
-		<div>{pokemon.generation}</div>
-	</div>
+	<PokemonCard {pokemon} />
 {:else}
 	<div>La requete n'est pas partie</div>
 {/if}

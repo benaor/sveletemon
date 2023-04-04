@@ -1,7 +1,7 @@
 <script>
 	import Footer from '../organisms/Footer.svelte';
 	import Header from '../organisms/Header.svelte';
-	import "../../styles/styles.css";
+	import '../../styles/styles.css';
 </script>
 
 <div class="app">
