@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import type { ThunkExtraArgument } from '../../../../store';
+import type { AppDispatch, ThunkExtraArgument } from '../../../../store';
 import type { PokemonDetailsState } from '../models/pokemon.model';
 
 export const getPokemonDetails = createAsyncThunk<
@@ -10,3 +10,7 @@ export const getPokemonDetails = createAsyncThunk<
 	const pokemonDetails = await extra.pokemonDetailsRepository.getPokemonDetails(idPokedex);
 	return pokemonDetails;
 });
+
+export const getPokemonDetailsAction = (idPokedex: number) => (dispatch: AppDispatch) => {
+	dispatch(getPokemonDetails(idPokedex));
+};

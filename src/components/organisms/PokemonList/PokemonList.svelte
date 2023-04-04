@@ -1,11 +1,13 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import type { PokemonList } from '../../../core/pokedex/pokemon/domain/models/pokemonList.model';
-	import type { AsyncThunkStatus } from '../../../core/shared/asyncThunkStatus.model';
+	import type {
+		PokemonListMapDispatchToProps,
+		PokemonListMapStateToProps
+	} from './PokemonList.model';
 
-	export let pokemons: PokemonList;
-	export let fetchPokemons: () => void;
-	export let fetchPokemonsStatus: AsyncThunkStatus;
+	export let fetchPokemons: PokemonListMapDispatchToProps['fetchPokemons'];
+	export let pokemons: PokemonListMapStateToProps['pokemons'];
+	export let status: PokemonListMapStateToProps['status'];
 
 	onMount(() => {
 		fetchPokemons();
@@ -15,11 +17,11 @@
 <div>
 	<h1>Liste des pokemons</h1>
 
-	{#if fetchPokemonsStatus === 'loading'}
+	{#if status === 'loading'}
 		<p>Chargement en cours...</p>
-	{:else if fetchPokemonsStatus === 'failed'}
+	{:else if status === 'failed'}
 		<p>Une erreur est survenue</p>
-	{:else if fetchPokemonsStatus === 'succeeded' && pokemons}
+	{:else if status === 'succeeded' && pokemons}
 		{#each pokemons as pokemon (pokemon.pokedexId)}
 			<li>
 				<a href={'/pokemon/' + pokemon.pokedexId}>

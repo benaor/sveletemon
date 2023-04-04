@@ -1,3 +1,5 @@
+import type { PageLoad } from './$types';
+
 import { dev } from '$app/environment';
 
 // we don't need any JS on this page, though we'll load
@@ -10,3 +12,11 @@ export const ssr = false;
 // since there's no dynamic data here, we can prerender
 // it so that it gets served as a static asset in production
 export const prerender = true;
+
+export const load = (async ({ params }) => {
+	const { id } = params;
+
+	return {
+		id
+	};
+}) satisfies PageLoad;
