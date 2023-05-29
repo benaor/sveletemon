@@ -17,6 +17,7 @@ type Sprites = {
 	gmax?: Omit<Sprites, 'gmax'> | null;
 };
 
+// TODO : add enum for types
 export type PokemonType = {
 	name: string;
 	image: string;

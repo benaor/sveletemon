@@ -10,8 +10,10 @@ export type ThunkExtraArgument = {
 	pokemonListRepository: PokemonListRepository;
 };
 
+export type AsyncThunkExtraArgs = { extra: ThunkExtraArgument };
+
 const thunkExtraArgument: ThunkExtraArgument = {
-	pokemonDetailsRepository: new pokeApiPokemonDetails(),
+	pokemonDetailsRepository: pokeApiPokemonDetails,
 	pokemonListRepository: new pokeApiPokemonList()
 };
 
